@@ -41,6 +41,5 @@ export QEMU_ALSA_ADC_DEV=plug:dsnoop0
 export QEMU_ALSA_VOL_CTRL=vm-${ALSA_VMID}
 
 ARGS="$*"
-ARGS="-xen-domid ${DOMID} -nodefaults -name qemu-${DOMID}.0 -machine xenfv,max-ram-below-4g=0xf0000000 -vga std -display surfman ${ARGS} -drive file=/dev/xvda,if=ide,index=0,media=disk,format=raw,readonly=off"
 
 exec /usr/bin/qemu-system-i386 $ARGS
